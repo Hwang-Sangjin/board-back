@@ -27,3 +27,9 @@ content-type: application/json
 {
     "contents": "FastCampus New world"
 }
+
+###
+
+# 게시글 삭제
+
+DELETE http://localhost:3000/board/1
