@@ -9,7 +9,7 @@ export class User {
 
   @ApiProperty({ description: '유저 아이디', example: 'admin' })
   @Column({ unique: true })
-  userid: string;
+  username: string;
 
   @ApiProperty({ description: '유저 비밀번호' })
   @Column({ select: false })
