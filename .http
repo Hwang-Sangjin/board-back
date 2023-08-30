@@ -1,3 +1,19 @@
 # 게시글 전체 가져오기
 
 GET http://localhost:3000/board
+
+###
+
+# 게시글 하나 가져오기
+GET http://localhost:3000/board/1
+
+
+###
+# 게시글 생성
+POST http://localhost:3000/board
+content-type: application/json
+
+{
+    "userId": 1,
+    "contents": "contents 11"
+}
