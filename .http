@@ -50,7 +50,7 @@ POST http://localhost:3000/user
 content-type: application/json
 
 {
-    "email": "aosdb5640@naver.com",
+    "email": "sangjinh@mobiltech.io",
     "name": "jin",
     "password": "m@gpies1221"
 }
@@ -63,6 +63,6 @@ POST http://localhost:3000/user/login
 content-type: application/json
 
 {
-    "email": "aosdb5640@naver.com",
+    "email": "sangjinh@mobiltech.io",
     "password": "m@gpies1221"
 }

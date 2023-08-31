@@ -6,16 +6,17 @@ import { HttpExceptionFilter } from './exceptions/http.exceptions';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.useGlobalFilters(new HttpExceptionFilter)
+  app.useGlobalFilters(new HttpExceptionFilter());
   const config = new DocumentBuilder()
-  .setTitle('Simple Board')
-  .setDescription('The Simpe Board API description')
-  .setVersion('1.0')
-  .addTag('Board')
-  .build();
-const document = SwaggerModule.createDocument(app, config);
-SwaggerModule.setup('api', app, document);
+    .setTitle('Simple Board')
+    .setDescription('The Simpe Board API description')
+    .setVersion('1.0')
+    .addTag('Board')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
 
-  await app.listen(3000);
+  app.enableCors();
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
