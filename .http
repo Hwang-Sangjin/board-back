@@ -5,7 +5,7 @@ GET http://localhost:3000/board
 ###
 
 # 게시글 하나 가져오기
-GET http://localhost:3000/board/1
+GET http://localhost:3000/board/2
 
 
 ###
@@ -50,7 +50,19 @@ POST http://localhost:3000/user
 content-type: application/json
 
 {
-    "username": "magpies1222",
+    "username": "magpies1221",
     "name": "jin",
+    "password": "m@gpies1221"
+}
+
+###
+
+# 유저 로그인
+
+POST http://localhost:3000/user/login
+content-type: application/json
+
+{
+    "username": "magpies1221",
     "password": "m@gpies1221"
 }
