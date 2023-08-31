@@ -11,8 +11,10 @@ import { UserModule } from './routes/user/user.module';
   imports: [
     ConfigModule(),
     TypeOrmModule.forRoot({
+      url: process.env.DATABASE_URL,
       type: 'postgres',
       host: process.env.DB_HOST,
+      ssl: { rejectUnauthorized: false },
       port: parseInt(process.env.DB_PORT),
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
