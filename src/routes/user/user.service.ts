@@ -48,8 +48,9 @@ export class UserService {
       throw new HttpException('UNAUTHORIZED', HttpStatus.UNAUTHORIZED);
 
     const payload = {
-      email,
+      email: user.email,
       name: user.name,
+      id: user.id,
     };
 
     const accessToken = jwt.sign(payload, 'secret_key', {
@@ -57,6 +58,7 @@ export class UserService {
     });
 
     return {
+      payload,
       accessToken,
     };
   }
