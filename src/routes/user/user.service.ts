@@ -16,28 +16,28 @@ export class UserService {
   ) {}
 
   async createUser(data: CreateUserDto) {
-    const { username, name, password } = data;
+    const { email, name, password } = data;
 
     const encryptedPassword = await this.encryptPassword(password);
 
     return this.userRepository.save({
-      username,
+      email,
       name,
       password: encryptedPassword,
     });
   }
 
-  async getUserByUsername(username: string) {
+  async getUserByUsername(email: string) {
     return this.userRepository.findOneBy({
-      username,
+      email,
     });
   }
 
   async login(data: LoginUserDto) {
-    const { username, password } = data;
+    const { email, password } = data;
 
     const user = await this.userRepository.findOneBy({
-      username,
+      email,
     });
 
     if (!user) throw new HttpException('NOT_FOUND', HttpStatus.NOT_FOUND);
@@ -48,7 +48,7 @@ export class UserService {
       throw new HttpException('UNAUTHORIZED', HttpStatus.UNAUTHORIZED);
 
     const payload = {
-      username,
+      email,
       name: user.name,
     };
 

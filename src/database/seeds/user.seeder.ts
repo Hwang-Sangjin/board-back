@@ -11,7 +11,7 @@ export default class UserSeeder implements Seeder {
 
     await repository.insert([
       {
-        username: 'fastcampus',
+        email: 'fastcampus@mobiltech.io',
         name: 'hwang sangjin',
         password: '1221',
       },

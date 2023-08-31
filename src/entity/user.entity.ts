@@ -7,9 +7,9 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ApiProperty({ description: '유저 아이디', example: 'admin' })
+  @ApiProperty({ description: '유저 아이디', example: 'admin@mobiltech.io' })
   @Column({ unique: true })
-  username: string;
+  email: string;
 
   @ApiProperty({ description: '유저 비밀번호' })
   @Column()
